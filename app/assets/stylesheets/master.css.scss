@@ -1,12 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100italic,900);
+
 body {
 	background: url('/assets/symphony.png');
-	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'quicksandregular', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .navbar.navbar-inverse {
 	background: url('/assets/congruent_outline.png');
 	border-radius: 0;
 	box-shadow: 0px 1px 3px #2a2a2a;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #d34943;
+	font-family: 'playfair_displayregular', serif;
+	font-size: 1.5em;
 }
 
 .booyah-box {
