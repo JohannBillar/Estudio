@@ -35,6 +35,9 @@ end
 # Include Bootsrap
 gem 'bootstrap-sass', '~> 3.3.5'
 
+# Include Kaminari pagination
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
