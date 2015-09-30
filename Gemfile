@@ -6,8 +6,8 @@ gem 'rails', '4.0.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+# Use SCSS for stylesheets without verion for Glyphicons
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -33,7 +33,10 @@ group :doc do
 end
 
 # Include Bootsrap
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '~> 3.3.5.1'
+
+# Include this Sprocket version to make Glyphicons work
+gem 'sprockets', '2.11.0'
 
 # Include Kaminari pagination
 gem 'kaminari'
