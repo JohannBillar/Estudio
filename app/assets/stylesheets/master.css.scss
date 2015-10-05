@@ -34,7 +34,9 @@ body {
 }
 
 .booyah-box h1 a,
-.booyah-box h1 a:hover {
+.booyah-box h1 a:hover,
+br + a,
+br + a:hover {
 	color: #333;
 }
 
