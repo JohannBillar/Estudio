@@ -78,7 +78,7 @@
 <div class="clearfix"></div>
 
 <% @place.comments.each do |comment| %>
-	<section class="col-xs-12 col-sm-6">
+	<article class="col-xs-12 col-sm-6">
 		<blockquote>
 			<% if comment.humanized_rating.present? %>
 					<strong><%= comment.humanized_rating %></strong> -
@@ -86,5 +86,5 @@
 				<%= comment.message %>
 				<small><%= comment.user.email %></small>
 		</blockquote>
-	</section>
+	</article>
 <% end %>
