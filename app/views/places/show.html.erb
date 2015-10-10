@@ -81,6 +81,13 @@
 
 <div class="clearfix"></div>
 
+	<%= simple_form_for @photo, :url => '#' do |f| %>
+		<%= f.input :caption %>
+		<%= f.submit 'Add a Photo', :class => 'btn btn-primary' %>
+	<% end %> 
+	
+<div class="clearfix"></div>	
+
 <% @place.comments.each do |comment| %>
 	<article class="col-xs-12 col-sm-6">
 		<blockquote>
