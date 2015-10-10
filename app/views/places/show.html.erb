@@ -77,25 +77,44 @@
 	<button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
 	  Add a comment
 	</button>
+
+<div class="clearfix"></div>
+
+	<% @place.comments.each do |comment| %>
+		<article class="col-xs-12 col-sm-6">
+			<blockquote>
+				<% if comment.humanized_rating.present? %>
+						<strong><%= comment.humanized_rating %></strong> -
+				<% end %>
+				<%= comment.message %>
+				<small><%= comment.user.email %></small>
+			</blockquote>
+		</article>
+	<% end %>
+	
 </section>
 
 <div class="clearfix"></div>
 
-<% @place.comments.each do |comment| %>
-	<article class="col-xs-12 col-sm-6">
-		<blockquote>
-			<% if comment.humanized_rating.present? %>
-					<strong><%= comment.humanized_rating %></strong> -
-			<% end %>
-			<%= comment.message %>
-			<small><%= comment.user.email %></small>
-		</blockquote>
-	</article>
-<% end %>
-
 <section class="booyah-box col-xs-10 col-xs-offset-1">
-	<%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
-		<%= f.input :caption %>
-		<%= f.submit 'Add a Photo', :class => 'btn btn-primary' %>
+	<h4>Upload Your Image</h4>	
+		<%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+			<%= f.input :caption %>
+			<br>
+			<%= f.submit 'Add a Photo', :class => 'btn btn-primary' %>
+		<% end %>
+</section>
+
+<div class="clearfix"></div>
+
+<section class="col-xs-10 col-xs-offset-1">
+	<h1 class="pull-left">Music Store Photos</h1>
+	<% @place.photos.each do |photo| %>
+		<article class="booyah-box col-xs-10 col-xs-offset-1">
+			<%= photo.caption %>
+	</article>
 	<% end %>
 </section>
+
+
+
