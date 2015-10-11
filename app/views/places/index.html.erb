@@ -21,6 +21,12 @@
 				</article>
 			<% end %>
 
+			<% if place.photos.present? && place.photos.last.picture.present? %>
+				<article class="col-xs-12">
+						<%= image_tag place.photos.last.picture, :class => 'img-responsive' %>	
+				</article>
+			<% end %>
+
 		</section>
 
 	<% end %>
