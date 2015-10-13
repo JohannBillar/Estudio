@@ -3,12 +3,8 @@ class CommentsController < ApplicationController
 
 	def create
 		@place = Place.find(params[:place_id])
-		@comment = @place.comments.create(comment_params.merge(:user => current_user))
-		if @comment.valid?
-			redirect_to place_path(@place)
-		else
-			render "places/show", :status => :unprocessable_entity
-		end
+		@place.comments.create(comment_params.merge(:user => current_user))
+		redirect_to place_path(@place)
 	end
 
 	private
