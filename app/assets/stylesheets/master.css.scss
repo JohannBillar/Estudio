@@ -17,8 +17,10 @@ body {
 
 .navbar.navbar-inverse {
 	background: url('/assets/congruent_outline.png');
+  opacity: .9;
 	border-radius: 0;
 	box-shadow: 0px 1px 3px #2a2a2a;
+  margin-bottom: 0;
 }
 
 /*  ESTUDIO Logo in top navbar  */
@@ -86,6 +88,28 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
+}
+
+/* carousel styles */
+.carousel {
+  box-shadow: 0 3px 8px #2a2a2a;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  /* kept default bootstrap styles
+  height: auto;
+  min-width: 100%
+  */
+}
+
+.carousel-caption {
+  font-family: 'quicksandregular', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  font-weight:100;
+  text-shadow: rgba(0,0,0,0.95) 2px 2px;
+  background-color: rgba(0,0,0,.3);
+  width:100%;
+  position: absolute;
+  left: 0;
 }
 
 
