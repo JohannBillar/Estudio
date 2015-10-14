@@ -1,12 +1,37 @@
-<section class="booyah-box">
-	<section class="col-xs-4">
-		<%= image_tag 'user.png', :class => 'img-responsive' %>
+
+<section class="container">
+	<br>
+	<h1 class="text-center">Profile Dashboard</h1>
+	<br>
+	<section class="booyah-box">
+		<aside class="col-xs-3">
+			<%= image_tag 'user.png', :class => 'img-responsive' %>
+		</aside>
+		<section class="col-xs-9">
+			<h2><%= @user.email %></h2>
+			<h3>Member since: <%= @user.created_at.strftime("%B %d %Y") %></h3>
+			<h4><%= @user.comments.count %> Total comments</h4>
+			<h4><%= @user.comments.where(:rating => '5_stars').count %> Total 5 star reviews</h>
+		</section>
+		<div class="clearfix"></div>
 	</section>
-	<section class="col-xs-8">
-		<h1><%= @user.email %></h1>
-		<h3>Member since: <%= @user.created_at.strftime("%B %d %Y") %></h3>
-		<h4><%= @user.comments.count %> Total comments</h4>
-		<h4><%= @user.comments.where(:rating => '5_stars').count %> Total 5 star reviews</h>
-	</section>
-	<div class="clearfix"></div>
-</section>
+
+	<br><br>
+
+	<h1 class="text-center">My Comments</h1>
+	<br><br>
+	<% @user.comments.each do |comment| %>
+		<article class="col-xs-12 col-sm-6">
+			<h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
+			<blockquote>
+				<% if comment.humanized_rating.present? %>
+					<strong><%= comment.humanized_rating %></strong> -
+					<%= comment.message %>
+					<small><%= comment.user.email %></small>
+				<% end %>
+			</blockquote>
+		</article>
+	<% end %>
+<section>
+
+
