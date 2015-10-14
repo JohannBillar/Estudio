@@ -18,7 +18,7 @@
 
 	<br><br>
 
-	<h1 class="text-center">My Comments</h1>
+	<h2 class="text-center">My Comments</h2>
 	<br><br>
 	<% @user.comments.each do |comment| %>
 		<article class="col-xs-12 col-sm-6">
@@ -32,6 +32,44 @@
 			</blockquote>
 		</article>
 	<% end %>
+	<div class="clearfix"></div>
+
+	<br><br>
+
+	<h2 class="text-center">My Places</h2>
+	<br><br>
+	<% @user.places.each do |place| %>
+
+		<section class="booyah-box col-xs-10 col-xs-offset-1">
+			<h1><%= link_to place.name, place_path(place)  %></h1>
+			<em><%= place.address %></em><br><br>
+			<p><%= place.description %></p><br>
+
+			<% if place.user.present? %>
+				<small><%= place.user.email %></small>
+			<% end %>
+
+			<% if place.comments.present? %>
+				<article class="col-xs-12">
+					<blockquote>
+						<% if place.comments.last.humanized_rating.present? %>
+								<strong><%= place.comments.last.humanized_rating %></strong> -
+							<% end %>
+							<%= place.comments.last.message %>
+							<small><%= place.comments.last.user.email %></small>
+					</blockquote>
+				</article>
+			<% end %>
+
+			<% if place.photos.present? && place.photos.last.picture.present? %>
+				<article class="col-xs-12">
+						<%= image_tag place.photos.last.picture, :class => 'img-responsive' %>	
+				</article>
+			<% end %>
+		</section>
+		
+	<% end %>	
+
 <section>
 
 
